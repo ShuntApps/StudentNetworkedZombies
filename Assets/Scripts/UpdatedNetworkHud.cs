@@ -48,6 +48,7 @@ public class UpdatedNetworkHud : MonoBehaviour
             if (!NetworkClient.active)
             {
                 manager.StartHost();
+                showGUI = false;
             }
             else
             {
@@ -64,6 +65,7 @@ public class UpdatedNetworkHud : MonoBehaviour
             {
                 manager.StartClient();
                 manager.networkAddress = serverAddress.text;
+                showGUI = false;
             }
             else
             {
@@ -77,6 +79,7 @@ public class UpdatedNetworkHud : MonoBehaviour
             if (ClientScene.localPlayer == null)
             {
                 ClientScene.AddPlayer();
+                showGUI = false;
             }
         }
     }
@@ -88,6 +91,7 @@ public class UpdatedNetworkHud : MonoBehaviour
             if (!NetworkClient.active)
             {
                 manager.StartServer();
+                showGUI = false;
             }
             else
             {

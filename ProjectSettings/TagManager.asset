@@ -8,6 +8,8 @@ TagManager:
   - Sword
   - MainCanvas
   - DropDownClr
+  - Tank
+  - Bullet
   layers:
   - Default
   - TransparentFX
