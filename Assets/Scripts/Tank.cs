@@ -16,11 +16,10 @@ public class Tank : NetworkBehaviour
     public GameObject projectilePrefab;
     public Transform projectileMount;
 
+    [Header("Health and UI")]
     [SyncVar(hook = nameof(SetHealth))]
     public int healthValue = 5;
-
     public TMPro.TextMeshPro healthTxt;
-
     GameObject localUI;
     Text loseTxt;
 
@@ -28,13 +27,10 @@ public class Tank : NetworkBehaviour
     {
         base.OnStartServer();
         SetHealth(healthValue);
-        Debug.Log("here");
     }
 
     void SetHealth(int newHealth)
     {
-
-
         string healthStr = "";
         for(int i=1;i<=newHealth;i++)
         {
@@ -112,7 +108,6 @@ public class Tank : NetworkBehaviour
             }
             GetComponent<Tank>().enabled = false;
 
-            //tidy this up- make it so the local player can see their health
         }
     }
 
@@ -120,7 +115,7 @@ public class Tank : NetworkBehaviour
     {
         if (isLocalPlayer && collision.gameObject.tag == "Bullet")
         {
-            Debug.Log("hit");
+            Debug.Log("hit "+gameObject);
             CmdChangeHealth(-1);
         }
     }

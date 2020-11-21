@@ -19,15 +19,14 @@ public class Projectile : NetworkBehaviour
         rigidBody.AddForce(transform.forward * force);
     }
 
-    // destroy for everyone on the server
+    // destroy for everyone on the server- only called on server
     [Server]
     void DestroySelf()
     {
         NetworkServer.Destroy(gameObject);
     }
 
-    // ServerCallback because we don't want a warning if OnTriggerEnter is
-    // called on the client
+    // ServerCallback makes the function only run on servers and not generate warnings if run on a client
     [ServerCallback]
     void OnTriggerEnter(Collider co)
     {

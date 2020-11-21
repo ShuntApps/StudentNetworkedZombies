@@ -138,8 +138,6 @@ public class UpdatedNetworkHud : MonoBehaviour
                 host.gameObject.GetComponentInChildren<Text>().text = "Host";
                 server.gameObject.GetComponentInChildren<Text>().text = "Server Only";
                 client.gameObject.GetComponentInChildren<Text>().text = "Join";
-
-                infoTxt.text = "Choose player colour and press joining option";
             }
         }
         else
