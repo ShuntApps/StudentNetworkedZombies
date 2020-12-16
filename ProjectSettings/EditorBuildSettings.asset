@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/UpdatedTankScene.unity
+    path: Assets/Scenes/UpdatedTankScene.unity
     guid: ef0d35a57e0889a4090bce7ad73c7858
   m_configObjects: {}
